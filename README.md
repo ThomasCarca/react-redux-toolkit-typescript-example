@@ -1,9 +1,19 @@
-# A React/Redux
+# A Redux toolkit example in typescript
 
-## Available Scripts
+How Redux toolkit is going to speed up your development processes and decrease code boilerplate.
+
+## Checkout the desired branch
+
+ - redux-vanilla : this branch contains redux vanilla code.
+ - redux-toolkit : this branch contains redux toolkit code.
+
+## Run the project
 
 In the project directory, you can run:
 
+### `npm install`
+
+Install all dependencies needed for the project to run correctly.<br />
 ### `npm start`
 
 Runs the app in the development mode.<br />
