@@ -21,12 +21,12 @@ export type ColorsActionTypes = SelectColorAction | IncreaseSaturation | Decreas
 export const selectColor = (color: Color): SelectColorAction => ({
     type: SELECT_COLOR,
     payload: color
-});
+})
 
 export const increaseSaturation = (): IncreaseSaturation => ({
     type: INCREASE_SATURATION
-});
+})
 
 export const decreaseSaturation = (): DecreaseSaturation => ({
     type: DECREASE_SATURATION
-});
+})

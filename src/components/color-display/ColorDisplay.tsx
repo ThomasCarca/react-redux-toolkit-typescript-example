@@ -17,11 +17,11 @@ const ColorDisplay = ({color, saturation}: ColorDisplayProps) => {
             You have selected {color} ({saturation})
         </div>
     );
-};
+}
 
 const mapStateToProps = (state: State): ColorDisplayStateProps => ({
     color: state.colors.current,
     saturation: state.colors.saturation
-});
+})
 
 export default connect(mapStateToProps)(ColorDisplay);

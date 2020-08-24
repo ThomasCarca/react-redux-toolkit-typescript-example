@@ -7,7 +7,7 @@ export interface ColorsState {
     saturation: number
 }
 
-const initialState: ColorsState = {current: "Red", saturation: 50};
+const initialState: ColorsState = {current: "Red", saturation: 50}
 
 const MAX_SATURATION = 100;
 const MIN_SATURATION = 0;
@@ -33,6 +33,6 @@ const reducers = (state: ColorsState = initialState, action: ColorsActionTypes):
         default:
             return state
     }
-};
+}
 
 export default reducers;

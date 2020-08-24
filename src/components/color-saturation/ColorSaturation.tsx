@@ -23,11 +23,11 @@ const ColorSaturation = ({increaseSaturation, decreaseSaturation}: ColorSaturati
             <button className="button" onClick={increaseSaturation}>+</button>
         </div>
     );
-};
+}
 
 const mapDispatchToProps: ColorSaturationDispatchProps = {
     increaseSaturation,
     decreaseSaturation
-};
+}
 
 export default connect(null, mapDispatchToProps)(ColorSaturation);

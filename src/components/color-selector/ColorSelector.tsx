@@ -14,13 +14,13 @@ interface ColorSelectorDispatchProps {
 interface ColorSelectorProps extends ColorSelectorStateProps, ColorSelectorDispatchProps {
 }
 
-export type Color = "Red" | "Green" | "Blue";
+export type Color = "Red" | "Green" | "Blue"
 
 const colors: Color[] = ["Red", "Green", "Blue"];
 
 const ColorSelector = ({selectColor, currentColor}: ColorSelectorProps) => {
 
-    const [selectedColor, setSelectedColor] = useState<Color>(currentColor);
+    const [selectedColor, setSelectedColor] = useState<Color>(currentColor)
 
     const handleColorSelection = (event: ChangeEvent<HTMLInputElement>) => {
         const selectedColor = event.target.value as Color;
@@ -49,10 +49,10 @@ const ColorSelector = ({selectColor, currentColor}: ColorSelectorProps) => {
 
 const mapStateToProps = (state: State): ColorSelectorStateProps => ({
     currentColor: state.colors.current
-});
+})
 
 const mapDispatchToProps: ColorSelectorDispatchProps = {
     selectColor
-};
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(ColorSelector);
