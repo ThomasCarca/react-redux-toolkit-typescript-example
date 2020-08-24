@@ -9,3 +9,20 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+.display {
+  margin-top: 50px;
+}
+
+.button {
+  width: 40px;
+  height: 40px;
+  margin: 10px;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.inline {
+  align-items: center;
+  display: inline-flex;
+}

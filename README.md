@@ -4,7 +4,7 @@ How Redux toolkit is going to speed up your development processes and decrease c
 
 ## Checkout the desired branch
 
- - redux-vanilla : this branch contains redux vanilla code.
+ - redux-vanilla : this branch contains redux vanilla code. <-- current branch
  - redux-toolkit : this branch contains redux toolkit code.
 
 ## Run the project
