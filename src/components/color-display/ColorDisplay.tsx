@@ -1,7 +1,7 @@
 import React from "react";
 import {Color} from "../color-selector/ColorSelector";
 import {connect} from "react-redux";
-import {State} from "../../store/reducers";
+import {State} from "../../index";
 
 interface ColorDisplayStateProps {
     color: Color
@@ -17,11 +17,11 @@ const ColorDisplay = ({color, saturation}: ColorDisplayProps) => {
             You have selected {color} ({saturation})
         </div>
     );
-}
+};
 
 const mapStateToProps = (state: State): ColorDisplayStateProps => ({
     color: state.colors.current,
     saturation: state.colors.saturation
-})
+});
 
 export default connect(mapStateToProps)(ColorDisplay);

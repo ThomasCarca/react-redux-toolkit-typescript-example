@@ -1,14 +1,17 @@
 import React, {ChangeEvent, useState} from "react";
 import {connect} from "react-redux";
-import {selectColor, SelectColorAction} from "../../store/colors/actions";
-import {State} from "../../store/reducers";
+import {ActionCreatorWithPayload} from "@reduxjs/toolkit";
+import {State} from "../../index";
+import colorsSlice from "../../store/colors/slice";
+
+const {selectColor} = colorsSlice.actions;
 
 interface ColorSelectorStateProps {
     currentColor: Color
 }
 
 interface ColorSelectorDispatchProps {
-    selectColor: (color: Color) => SelectColorAction
+    selectColor: ActionCreatorWithPayload<Color>
 }
 
 interface ColorSelectorProps extends ColorSelectorStateProps, ColorSelectorDispatchProps {
@@ -20,13 +23,13 @@ const colors: Color[] = ["Red", "Green", "Blue"];
 
 const ColorSelector = ({selectColor, currentColor}: ColorSelectorProps) => {
 
-    const [selectedColor, setSelectedColor] = useState<Color>(currentColor)
+    const [selectedColor, setSelectedColor] = useState<Color>(currentColor);
 
     const handleColorSelection = (event: ChangeEvent<HTMLInputElement>) => {
         const selectedColor = event.target.value as Color;
         setSelectedColor(selectedColor);
         selectColor(selectedColor);
-    }
+    };
 
     return (
         <div>
@@ -45,14 +48,14 @@ const ColorSelector = ({selectColor, currentColor}: ColorSelectorProps) => {
             </form>
         </div>
     );
-}
+};
 
 const mapStateToProps = (state: State): ColorSelectorStateProps => ({
     currentColor: state.colors.current
-})
+});
 
 const mapDispatchToProps: ColorSelectorDispatchProps = {
     selectColor
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(ColorSelector);

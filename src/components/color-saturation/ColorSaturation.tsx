@@ -1,15 +1,13 @@
 import React from "react";
-import {
-    decreaseSaturation,
-    DecreaseSaturation,
-    increaseSaturation,
-    IncreaseSaturation
-} from "../../store/colors/actions";
 import {connect} from "react-redux";
+import {ActionCreatorWithoutPayload} from "@reduxjs/toolkit";
+import colorsSlice from "../../store/colors/slice";
+
+const {decreaseSaturation, increaseSaturation} = colorsSlice.actions;
 
 interface ColorSaturationDispatchProps {
-    increaseSaturation: () => IncreaseSaturation
-    decreaseSaturation: () => DecreaseSaturation
+    increaseSaturation: ActionCreatorWithoutPayload
+    decreaseSaturation: ActionCreatorWithoutPayload
 }
 
 interface ColorSaturationProps extends ColorSaturationDispatchProps {
@@ -23,11 +21,11 @@ const ColorSaturation = ({increaseSaturation, decreaseSaturation}: ColorSaturati
             <button className="button" onClick={increaseSaturation}>+</button>
         </div>
     );
-}
+};
 
 const mapDispatchToProps: ColorSaturationDispatchProps = {
     increaseSaturation,
     decreaseSaturation
-}
+};
 
 export default connect(null, mapDispatchToProps)(ColorSaturation);

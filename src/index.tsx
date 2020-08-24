@@ -1,12 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
-import {createStore} from 'redux';
-import rootReducer from './store/reducers';
 import './index.css';
 import App from './App';
+import {configureStore} from "@reduxjs/toolkit";
+import colorsSlice from "./store/colors/slice";
 
-const store = createStore(rootReducer);
+const store = configureStore({
+    reducer: {
+        colors: colorsSlice.reducer
+    }
+});
+
+export type State = ReturnType<typeof store.getState>
 
 ReactDOM.render(
     <Provider store={store}>
